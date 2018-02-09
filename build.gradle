@@ -1,0 +1,69 @@
+group = 'com.qmetry'
+version = '1.0'
+
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies 
+{
+    compile gradleApi()
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.4'
+	compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.4'
+	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+	compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+	compile group: 'commons-io', name: 'commons-io', version: '2.6'
+}
+
+repositories 
+{
+    mavenLocal()
+    mavenCentral()
+}
+
+//Gradle Publishing Plugin
+buildscript 
+{
+	repositories 
+	{
+		maven 
+		{
+		  url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies 
+	{
+		classpath "com.gradle.publish:plugin-publish-plugin:0.9.10"
+	}
+}
+
+apply plugin: "com.gradle.plugin-publish"
+
+dependencies 
+{
+	compile gradleApi()
+}
+
+pluginBundle 
+{
+	website = 'http://www.qmetry.org/'
+	vcsUrl = 'https://ishaanshringi@bitbucket.org/is_corp/qtmgradleplugin.git'
+
+	plugins 
+	{
+		greetingsPlugin 
+		{
+			id = 'com.qmetry.qtmgradleplugin'
+			displayName = 'QMetry Test Management Plugin'
+			description = 'Ship high quality products, faster by linking automated test results from Gradle to QMetry Test Management.'
+			tags = ['test', 'automation', 'qmetry']
+			version = '1.0'
+		}
+	}
+  
+	mavenCoordinates 
+	{
+		groupId = "com.qmetry"
+		artifactId = "qtmgradleplugin"
+		version = "1.0"
+	}
+}
