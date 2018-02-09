@@ -6,7 +6,7 @@ The plugin, if used in a gradle project, provides an additional gradle task 'pub
 
 ## How to use the plugin?
 ### Getting data from QMetry Test Management
-To get your Automation API Key from QMetry Test Management :-
+To get qmetry configuration from QMetry Test Management :-
 1. Login to QMetry Test Management application.
 2. Choose an existing project or create new.
 2. Goto *Apps > Automation App > Automation API*
