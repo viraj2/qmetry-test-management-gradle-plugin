@@ -9,7 +9,18 @@ to install the plugin in your local maven repository.
 ```
 gradle clean install
 ```
-Use the plugin from anywhere in your gradle project, by including the following code in **build.gradle** file...
+Use the plugin from anywhere in a gradle project, by including a configuration in **build.gradle** file.
+The task *publishResults* always looks for *qmetryConfig {... }* in build.gradle file of your project. Provide following details :-
+
+**qtmUrl** - url to qtm instance
+**qtmAutomationApiKey** - Automation Key
+**automationFramework** - JUNIT/TESTNG/CUCUMBER/QAS/HPUFT
+**testSuite** (optional) - Key of test suite.
+**buildName** (optional) - Name of cycle linked to test suite
+**testResultFilePath** - path to result file (or directory for multiple files) relative to build directory
+**platform** (optional) - Name of the platform to connect the suite
+
+Include the following code in your **build.gradle** file. Change qmetryConfig values as required.
 ```
 apply plugin: 'com.qmetry.qtmgradleplugin'
 
@@ -46,15 +57,3 @@ gradle test publishResults
 gradle clean build
 ```
 Use the jar file directly as a dependency in your Gradle project *build.gradle* file.
-
-The task publishResults always looks for qmetryConfig in build.gradle file of your project. Provide following details :-
-
-```
-qtmUrl - url to qtm instance
-qtmAutomationApiKey - Automation Key
-automationFramework - JUNIT/TESTNG/CUCUMBER/QAS/HPUFT
-testSuite (optional) - Key of test suite.
-buildName (optional) - Name of cycle linked to test suite
-testResultFilePath - path to result file (or directory for multiple files) relative to build directory
-platform(optional) - Name of the platform to connect the suite
-```
