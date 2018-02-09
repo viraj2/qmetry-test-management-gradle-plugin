@@ -10,6 +10,7 @@ To get your Automation API Key from QMetry Test Management :-
 1. Login to QMetry Test Management application.
 2. Choose an existing project or create new.
 2. Goto *Apps > Automation App > Automation API*
+
 OR directly visit https://testmanagement.qmetry.com/#/automation-api
 ### Installing plugin from Gradle's remote repository
 Use the plugin from any machine (should have permission to download dependencies from internet) in a gradle project, by including a configuration in your **build.gradle** file.
