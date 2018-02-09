@@ -46,7 +46,7 @@ dependencies
 pluginBundle 
 {
 	website = 'http://www.qmetry.org/'
-	vcsUrl = 'https://ishaanshringi@bitbucket.org/is_corp/qtmgradleplugin.git'
+	vcsUrl = 'https://github.com/qmetry/qmetry-test-management-gradle-plugin'
 
 	plugins 
 	{

@@ -1,32 +1,33 @@
 # qmetry-test-management-gradle-plugin
 QMetry Test Management plugin for Gradle has been designed to seamlessly integrate your CI/CD pipeline with QMetry.
 
-QTMGradlePlugin uploads result file(s) generated in a Gradle project to QTM Enterprise server.
+QMetry Gradle Plugin uploads result file(s) generated in a Gradle project to QMetry Test Management.
 The plugin, if used in a gradle project, provides an additional gradle task 'publishResults'
 
 ## How to use the plugin?
-to install the plugin in your local maven repository. 
+to install the plugin in your local maven repository, use following command
 ```
 gradle clean install
 ```
-Use the plugin from anywhere in a gradle project, by including a configuration in **build.gradle** file.
+Use the plugin from anywhere in a gradle project, by including a configuration in your **build.gradle** file.
 The task *publishResults* always looks for *qmetryConfig {... }* in build.gradle file of your project. Provide following details :-
 
-* **qtmUrl** - url to qtm instance
-* **qtmAutomationApiKey** - Automation Key
+* **qtmUrl** - URL to your QMetry instance
+* **qtmAutomationApiKey** - Automation API Key
 * **automationFramework** - JUNIT/TESTNG/CUCUMBER/QAS/HPUFT
 * **testSuite** (optional) - Key of test suite.
 * **buildName** (optional) - Name of cycle linked to test suite
 * **testResultFilePath** - path to result file (or directory for multiple files) relative to build directory
 * **platform** (optional) - Name of the platform to connect the suite
 
+Visit https://testmanagement.qmetry.com/#/automation-api to view automation API Key from QMetry.
 Include the following code in your **build.gradle** file. Change qmetryConfig values as required.
 ```
 apply plugin: 'com.qmetry.qtmgradleplugin'
 
 qmetryConfig
 {
-	qtmUrl='https://yourcompany.qmetry.com/'
+	qtmUrl='https://testmanagement.qmetry.com/'
 	qtmAutomationApiKey='zEzs7iy77D8ARWX8xMFzdhfsrgh6W0LCyaK6xdec'
 	automationFramework='JUNIT'
 	testResultFilePath='/test-results/test/TEST-ispl.sample.AppSecondTest.xml'
